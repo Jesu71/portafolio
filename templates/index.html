@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi Portafolio</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">Portafolio</div>
+            <div class="menu-toggle" id="mobile-menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="#presentacion">Inicio</a></li>
+                <li><a href="#sobre-mi">Sobre Mí</a></li>
+                <li><a href="#proyectos">Proyectos</a></li>
+                <li><a href="#contacto">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Sección de Presentación -->
+        <section id="presentacion" class="section">
+            <div class="container">
+                <div class="presentacion-content">
+                    <div class="presentacion-text">
+                        <h1>¡Hola, soy <span class="highlight">Jesús Rendón</span>!</h1>
+                        <p class="subtitle">Desarrollador Web & Diseñador</p>
+                        <a href="#contacto" class="btn">Contáctame</a>
+                    </div>
+                    <div class="presentacion-image">
+                        <img src="{{ url_for('static', filename='img/placeholder.jpg') }}" alt="Tu Foto">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sección Sobre Mí -->
+        <section id="sobre-mi" class="section">
+            <div class="container">
+                <h2 class="section-title">Sobre Mí</h2>
+                <div class="sobre-mi-content">
+                    <p>
+                        Ingeniero de software en proceso con capacitacion para proyectos webs de todo tipo, y manejos de IA.
+                    </p>
+                    <div class="skills">
+                        <h3>Mis Habilidades</h3>
+                        <div class="skill-tags">
+                            <span class="skill-tag">HTML</span>
+                            <span class="skill-tag">CSS</span>
+                            <span class="skill-tag">JavaScript</span>
+                            <span class="skill-tag">Python</span>
+                            <span class="skill-tag">Flask</span>
+                            <!-- Agrega o quita habilidades según corresponda -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sección de Proyectos -->
+        <section id="proyectos" class="section">
+            <div class="container">
+                <h2 class="section-title">Mis 3 Proyectos Principales</h2>
+                <div class="proyectos-grid">
+                    <!-- Proyecto 1 -->
+                    <div class="proyecto-card">
+                        <div class="proyecto-img" style="background-image: url('{{ url_for('static', filename='img/projects/proyecto1.jpg') }}')"></div>
+                        <h3>Proyecto 1</h3>
+                        <p>App de juego de dados y base de datos</p>
+                    </div>
+                    
+                    <!-- Proyecto 2 -->
+                    <div class="proyecto-card">
+                        <div class="proyecto-img" style="background-image: url('{{ url_for('static', filename='img/projects/proyecto2.jpg') }}')"></div>
+                        <h3>Proyecto 2</h3>
+                        <p>App formulario web y base de datos</p>
+                    </div>
+                    
+                    <!-- Proyecto 3 -->
+                    <div class="proyecto-card">
+                        <div class="proyecto-img" style="background-image: url('{{ url_for('static', filename='img/projects/proyecto3.jpg') }}')"></div>
+                        <h3>Proyecto 3</h3>
+                        <p>App con tkinter de gestion de inventario y base de datos</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sección de Contacto -->
+        <section id="contacto" class="section">
+            <div class="container">
+                <h2 class="section-title">Contacto</h2>
+                <div class="contacto-content">
+                    <div class="contacto-info">
+                        <div class="contacto-item">
+                            <i class="fas fa-envelope"></i>
+                            <span>jesus.rendon@hotmail.com</span>
+                        </div>
+                        <div class="contacto-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Cienaga Magdalena, Colombia</span>
+                        </div>
+                        <div class="social-links">
+                            <a href="https://github.com/Jesu71" class="social-icon" target="_blank"><i class="fab fa-github"></i></a>
+                            <a href="https://www.linkedin.com/in/jes%C3%BAs-rend%C3%B3n-8839551bb/" class="social-icon" target="_blank"><i class="fab fa-linkedin"></i></a>
+                            <a href="https://x.com/jmre06_17" class="social-icon" target="_blank"><i class="fab fa-twitter"></i></a>
+                        </div>
+                    </div>
+                    <form class="contacto-form">
+                        <div class="form-group">
+                            <label for="nombre">Nombre</label>
+                            <input type="text" id="nombre" name="nombre" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="mensaje">Mensaje</label>
+                            <textarea id="mensaje" name="mensaje" rows="5" required></textarea>
+                        </div>
+                        <button type="submit" class="btn">Enviar Mensaje</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Mi Portafolio. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+</body>
+</html>
